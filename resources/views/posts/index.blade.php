@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-  <meta charset="UTF-8">
-  <title>Blog</title>
-  <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-</head>
-<body class='antialiased'>
+<x-app-layout>
   <h1>Blog Name</h1>
+  <br>
   <a href="/posts/create">create</a>
 
   <div class='posts'>
@@ -24,10 +17,13 @@
           @method('DELETE')
           <button type="button" onclick="deletePost({{$post->id}})">Delete</button>
         </form>
+        <br>
       </div>
       @endforeach
     
   </div>
+  
+  <p>ログインユーザー:{{ Auth::user()->name }}</p>
   <div class='paginate'>
     {{$posts->links()}}
   </div>
@@ -40,6 +36,4 @@
       }
     }
   </script>
-</body>
-
-</html>
+</x-app-layout>

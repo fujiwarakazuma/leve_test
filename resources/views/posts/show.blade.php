@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-  <meta charset="UTF-8">
-  <title>Post</title>
-  <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-</head>
-<body class='antialiased'>
+<x-app-layout>
      <h1 class="title">
             {{ $post->title }}
     </h1>
@@ -23,5 +15,4 @@
     <div class="footer">
         <a href="/">戻る</a>
     </div>
-</body>
-</html>
+</x-app-layout>
